@@ -1,0 +1,172 @@
+body {
+    background-color: #F5F5DE;
+    width:850px;
+    min-width: 800px;
+    width: 80%;
+    margin:50px;
+    box-shadow: 7px 7px 5px black;
+}
+/*==================== CONFIGURING DIV'S ======================*/
+header {
+    background-color: #CDB591;
+    width: auto;
+    height:100px;
+    background-image: url("HeaderPicture.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.wrapper {
+    width:auto;
+    height:auto;
+    position:relative;
+}
+.navbar {
+    float: left;
+    width: 150px;
+    background-color: #DFD2B4;
+    height: 100%;
+    position: absolute;
+}
+.content {
+    margin-left:150px;
+    padding:20px;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 10pt;
+}
+footer {
+    background-color: #CDB591;
+    font-size: small;
+    font-style: italic;
+    text-align: center;
+    width: auto;
+    height: 70px;
+    clear: both;
+}
+p {
+    color: #300402;
+}
+
+/* SPECIFIC CONFIGS SUCH AS UL'S AND IMAGES */
+
+#music_image {
+    float:left;
+    padding-right:40px;
+    padding-bottom: 20px;
+    margin-left:45px;
+}
+#homepage_image {
+    float:left;
+    padding-right:40px;
+    margin-left:40px;
+}
+h1 {
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size:24px;
+    padding-left:0;
+    margin-top:0;
+    color: #300402
+}
+h2 {
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size:18px;
+    background-color:#CDB591;
+}
+audio {
+    margin-top:20px;
+}
+nav ul{
+    list-style: none;
+    text-align: center;
+    padding: 0%;
+}
+ul.homepage {
+    list-style-image: url(brownButton.png);
+    /* height: auto; */
+    padding-left: 395px;
+}
+/* Button jpg taken from http://www.rgbstock.com/bigphoto/mf6JSbW/Glossy+Ball+3 */
+nav a {
+    text-decoration: none;
+    color: #6D563F;
+    font-weight: bold;
+    font-size:large;
+    font-family: Arial, sans-serif;
+}
+nav a.active {
+    color: #AE9E83; /* Change to desired hover color */
+}
+
+/*==================== TABLE CONFIG =====================*/
+
+table {
+    border:none;
+    width:80%;
+    border-spacing:2px;
+    margin-left: 80px;
+}
+tr th h2{
+    text-align: left;
+    margin-left: 20px;
+    margin: 0;
+}
+tr:first-of-type {
+    background-color: #FF0000;
+}
+tr {
+    color: #300402;
+    font-size: 9pt;
+}
+tr:nth-of-type(odd) {
+    background-color: #CDB591;
+    font-family: Arial, sans-serif;
+}
+td:nth-child(odd) {
+    text-align: center;
+    font-weight: bold;
+    font-family: Verdana, Arial, sans-serif;
+}
+td:nth-child(even){
+    padding: 7px;
+    font-size: small;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+/*================= MUSIC CONFIG ========================*/
+.music_wrapper {
+    margin-top: 30px;
+    width:475px;
+    height:350px;
+    padding-left:80px;
+    color: #300402;
+}
+.row {
+    display: flex;
+    margin-bottom: 20px;
+}
+.leftColumn {
+    flex: 1;
+    max-width: 150px;
+    align-content: center;
+}
+.rightColumn{
+    flex: 2;
+    padding-left: 20px;
+}
+.rightColumn audio{
+    margin: 0;
+}
+
+/*================= FORM CONFIG ========================*/
+
+label {
+    text-align: right;
+    padding-right:30px;
+    margin-top: 10px;
+    width:100px;
+    float:left;
+}
+input, textarea {
+    margin-top:10px;
+}
