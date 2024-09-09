@@ -1,0 +1,24 @@
+table{
+    margin: auto;
+    border: 5px solid #000066;
+    width: 600px;
+    border-spacing: 0;
+}
+td, th {
+    padding: 5px;
+    font-family: Arial, sans-serif; 
+    border-style: none;
+}
+caption {
+    font-family: verdana, sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding-bottom: 5px;
+}
+tr:nth-of-type(even){
+    background-color: #eaeaea;
+}
+tr:first-of-type{
+    background-color: #000066;
+    color: #eaeaea;
+}
