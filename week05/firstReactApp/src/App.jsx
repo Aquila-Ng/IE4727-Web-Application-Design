@@ -11,6 +11,7 @@ const FormValidationExample = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [isSignUp, setIsSignUp] = useState(true);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,16 +19,40 @@ const FormValidationExample = () => {
   };
 
   const validateForm = () => {
+    const pwdRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
     let formErrors = {};
     if (!formData.username) formErrors.username = 'Username is required';
     if (!formData.email) formErrors.email = 'Email is required';
     else if (!/\S+@\S+\.\S+/.test(formData.email)) formErrors.email = 'Email is invalid';
+
     if (!formData.password) formErrors.password = 'Password is required';
-    if (formData.password !== formData.confirmPassword) formErrors.confirmPassword = 'Passwords do not match';
-    if ((formData.password.length < 8) || ((formData.confirmPassword.length < 8))) {
-      formErrors.confirmPassword = 'Password requires at least 8 characters'
-      formErrors.password = 'Password requires at least 8 characters'
+    else if (formData.password){
+      let errors = '';
+      if (!/(?=.*?[A-Z])/.test(formData.password))
+      {
+        errors += '- One upper case english letter \n'
+      }
+      if (!/(?=.*?[a-z])/.test(formData.password))
+      {
+        errors += '- One lower case english letter \n'
+      }
+      if (!/(?=.*?[0-9])/.test(formData.password))
+      {
+        errors += '- One digit \n'
+      }
+      if (!/(?=.*?[#?!@$%^&*-.])/.test(formData.password))
+      {
+        errors += '- One special character \n'
+      }
+      if (formData.password.length < 8)
+      {
+        errors += '- 8 or More Characters'
+      }
+      if (errors != ''){
+        formErrors.password = 'Password must contain: \n' + errors;
+      }
     }
+    if (formData.password !== formData.confirmPassword) formErrors.confirmPassword = 'Passwords do not match';
     return formErrors;
   };
 
@@ -36,6 +61,7 @@ const FormValidationExample = () => {
     const formErrors = validateForm();
     if (Object.keys(formErrors).length === 0) {
       // Handle successful form submission (e.g., send data to the server)
+      alert('Success');
       console.log('Form submitted:', formData);
     } else {
       setErrors(formErrors);
@@ -43,19 +69,23 @@ const FormValidationExample = () => {
   };
 
   return (
-    <div className="container mt-5 justify-content-end">
-      <div className="card" style={{width: '20rem'}}>
+    <div className="container">
+      <div className="card">
         <div className="card-body">
-          <h2 className="card-title mb-4 text-center">Registration Page</h2>
+          <h2 className="card-title">Registration</h2>
+          <div>
+
+          </div>
           <form onSubmit={handleSubmit}>
             {/* Username Input */}
             <div className="mb-3">
-              <label htmlFor="username" className="form-label">Username</label>
+              <label htmlFor="username" className="form-label">Username*</label>
               <input
                 type="text"
                 className={`form-control ${errors.username ? 'is-invalid' : ''}`}
                 id="username"
                 name="username"
+                placeholder='Eg. user1'
                 value={formData.username}
                 onChange={handleChange}
               />
@@ -64,12 +94,13 @@ const FormValidationExample = () => {
 
             {/* Email Input */}
             <div className="mb-3">
-              <label htmlFor="email" className="form-label">Email</label>
+              <label htmlFor="email" className="form-label">Email*</label>
               <input
                 type="email"
                 className={`form-control ${errors.email ? 'is-invalid' : ''}`}
                 id="email"
                 name="email"
+                placeholder='Eg. abcd@123.com'
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -78,7 +109,8 @@ const FormValidationExample = () => {
 
             {/* Password Input */}
             <div className="mb-3">
-              <label htmlFor="password" className="form-label">Password</label>
+              <label htmlFor="password" className="form-label">Password*</label>
+              <label htmlFor="password" className="form-label2">Must contain at least 8 characters</label>
               <input
                 type="password"
                 className={`form-control ${errors.password ? 'is-invalid' : ''}`}
@@ -92,7 +124,8 @@ const FormValidationExample = () => {
 
             {/* Confirm Password Input */}
             <div className="mb-3">
-              <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
+              <label htmlFor="confirmPassword" className="form-label">Confirm Password*</label>
+              <label htmlFor="confirmPassword" className="form-label2">Must contain at least 8 characters</label>
               <input
                 type="password"
                 className={`form-control ${errors.confirmPassword ? 'is-invalid' : ''}`}
