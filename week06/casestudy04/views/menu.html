@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaJam Coffee House Menu</title>
+    <link rel="stylesheet" href="../css/stylesheet.css">
+</head>
+<body>
+<header>
+
+</header>
+<div class="wrapper">
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <h1>Coffee at JavaJam</h1>
+        <table id="menuTable">
+            <tr>
+                <td id="leftcolumn_table">Just Java</td>
+                <td>Regular house blend, decaffeinated coffee, or flavor of the day. <br>
+                <strong>Endless cup $2.00</strong></td>
+                <td>
+                    <div class="form-group">
+                        <input type="number" id="decaf" min="0" max="50" value="0">
+                        <span id="decaf_error" class="error-message"></span>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="text" id="decaf_price" value="$0.00" readonly>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Cafe au Lait</td>
+                <td>House blended coffee infused into a smooth, steamed milk.<br>
+                    <strong>
+                        <input name="CAL" type="radio" id="CAL_single" checked>Single $2.00
+                        <input name="CAL" type="radio" id="CAL_double">Double $3.00
+                    </strong>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="number" id="CAL" min="0" max="50" value="0">
+                        <span id="CAL_error" class="error-message"></span>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="text" id="CAL_price" value="$0.00" readonly>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Iced Cappuccino</td>
+                <td>Sweetened espresso blended with icy-cold milk and served in a chilled glass<br>
+                    <strong>
+                        <input name="IC" type="radio" id="IC_single" checked>Single $4.75 
+                        <input name="IC" type="radio" id="IC_double">Double $5.75
+                    </strong>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="number" id="IC" min="0" max="50" value="0">
+                        <span id="IC_error" class="error-message"></span>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="text" id="IC_price" value="$0.00" readonly>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: right;"><strong>Total:</strong></td>
+                <td><input type="text" id="totalPrice" value="$0.00" readonly></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<footer><br>Copyright &copy; 2024 JavaJam Coffee House<br>
+    <a href="mailto:aquila@ng.com">aquila@ng.com</a>
+</footer>
+</div>
+<script src="../js/MenuUpdate.js"></script>
+</body>
+</html>
