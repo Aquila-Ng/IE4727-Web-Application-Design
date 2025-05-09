@@ -1,0 +1,217 @@
+body {
+    background-color: #F5F5DE;
+    width:850px;
+    min-width: 800px;
+    width: 80%;
+    margin:50px;
+    box-shadow: 7px 7px 5px black;
+}
+/*==================== CONFIGURING DIV'S ======================*/
+header {
+    background-color: #CDB591;
+    width: auto;
+    height:100px;
+    background-image: url("../images/HeaderPicture.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.wrapper {
+    width:auto;
+    height:auto;
+    position:relative;
+}
+.navbar {
+    float: left;
+    width: 150px;
+    background-color: #DFD2B4;
+    height: 100%;
+    position: absolute;
+}
+.content {
+    margin-left:150px;
+    padding:20px;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 10pt;
+}
+footer {
+    background-color: #CDB591;
+    font-size: small;
+    font-style: italic;
+    text-align: center;
+    width: auto;
+    height: 70px;
+    clear: both;
+}
+p {
+    color: #300402;
+}
+
+/* SPECIFIC CONFIGS SUCH AS UL'S AND IMAGES */
+
+#music_image {
+    float:left;
+    padding-right:40px;
+    padding-bottom: 20px;
+    margin-left:45px;
+}
+#homepage_image {
+    float:left;
+    padding-right:40px;
+    margin-left:40px;
+}
+h1 {
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size:24px;
+    padding-left:0;
+    margin-top:0;
+    color: #300402
+}
+h2 {
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size:18px;
+    background-color:#CDB591;
+}
+audio {
+    margin-top:20px;
+}
+nav ul{
+    list-style: none;
+    text-align: center;
+    padding: 0%;
+}
+ul.homepage {
+    list-style-image: url(../images/brownButton.png);
+    /* height: auto; */
+    padding-left: 395px;
+}
+/* Button jpg taken from http://www.rgbstock.com/bigphoto/mf6JSbW/Glossy+Ball+3 */
+nav a {
+    text-decoration: none;
+    color: #6D563F;
+    font-weight: bold;
+    font-size:large;
+    font-family: Arial, sans-serif;
+}
+nav a.active {
+    color: #AE9E83; /* Change to desired hover color */
+}
+
+/*==================== TABLE CONFIG =====================*/
+
+/* General table styling for menuTable */
+#menuTable {
+    border: none;
+    width: 80%;
+    border-spacing: 2px;
+    margin-left: 80px;
+}
+
+/* Styling for table headers within menuTable */
+#menuTable th h2 {
+    text-align: left;
+    margin-left: 20px;
+    margin: 0;
+}
+
+/* Styling for the first row in menuTable */
+#menuTable tr:first-of-type {
+    background-color: #FF0000;
+}
+
+/* General styling for rows in menuTable */
+#menuTable tr {
+    color: #300402;
+    font-size: 9pt;
+    height: 80px;
+}
+
+/* Odd rows styling in menuTable */
+#menuTable tr:nth-of-type(odd) {
+    background-color: #CDB591;
+    font-family: Arial, sans-serif;
+}
+
+/* Styling for odd cells in menuTable */
+#menuTable td:nth-child(odd) {
+    text-align: center;
+    font-weight: bold;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+/* Styling for even cells in menuTable */
+#menuTable td:nth-child(even) {
+    padding: 7px;
+    font-size: small;
+    font-family: Verdana, Arial, sans-serif;
+}
+#menuTable td input{
+    width: 80px;
+    max-width: 80px;
+}
+
+/*================= MUSIC CONFIG ========================*/
+.music_wrapper {
+    margin-top: 30px;
+    width:475px;
+    height:350px;
+    padding-left:80px;
+    color: #300402;
+}
+.row {
+    display: flex;
+    margin-bottom: 20px;
+}
+.leftColumn {
+    flex: 1;
+    max-width: 150px;
+    align-content: center;
+}
+.rightColumn{
+    flex: 2;
+    padding-left: 20px;
+}
+.rightColumn audio{
+    margin: 0;
+}
+.form-control.is-invalid + .error-message {
+    display: block;
+}
+.form-control[readonly] {
+    background-color: #e9ecef;
+    opacity: 1;
+}
+
+/*================= FORM CONFIG ========================*/
+
+label {
+    text-align: right;
+    padding-right:30px;
+    margin-top: 10px;
+    width:100px;
+    float:left;
+}
+input, textarea {
+    margin-top:10px;
+}
+/* Styles for input fields with errors */
+.input-error {
+    border: 1px solid #dc3545; /* Red border to indicate error */
+    background-color: #f8d7da; /* Light red background for the error state */
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25); /* Optional shadow for emphasis */
+}
+/* Styles for error messages */
+.error-message {
+    color: #dc3545; /* Red color for error messages */
+    font-weight: 100;
+    font-size: 0.875em; /* Slightly smaller text */
+    margin-top: 0.25em; /* Space above the error message */
+    display: block; /* Ensure the error message is displayed on a new line */
+}
+/* Optional: Styles for inputs in a valid state (for visual contrast) */
+.input-valid {
+    border: 1px solid #28a745; /* Green border for valid input (Bootstrap's valid state) */
+    background-color: #d4edda; /* Light green background for valid input */
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); /* Optional shadow for emphasis */
+}
